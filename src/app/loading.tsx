@@ -1,0 +1,1 @@
+export default function Loading(){return <section className="section"><div className="shell"><div className="h-12 w-2/5 animate-pulse bg-[#e4eef2]"/><div className="mt-8 product-grid">{[1,2,3,4].map(x=><div className="aspect-[.72] animate-pulse bg-[#edf5f7]" key={x}/>)}</div></div></section>}

@@ -1,0 +1,1 @@
+import { AccountShell } from "@/components/account-shell";export default function Profile(){return <AccountShell title="Profile"><div className="panel"><h2 className="text-xl font-bold text-navy">Profile details</h2><p className="mt-3 text-muted">Secure customer profile editing will be enabled with authentication.</p></div></AccountShell>}

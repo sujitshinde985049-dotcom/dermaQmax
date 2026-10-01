@@ -1,0 +1,3 @@
+import { PageHero } from "./page-hero";
+export function PolicyPage({title,intro,sections}:{title:string;intro:string;sections:{title:string;body:string}[]}){return <><PageHero eyebrow="Legal & information" title={title} copy={intro}/><section className="section"><article className="shell prose-page max-w-3xl"><div className="border-l-4 border-[var(--aqua)] bg-light p-5 text-sm text-muted">Starter policy template — replace bracketed company details and obtain appropriate legal review before launch.</div>{sections.map(s=><section key={s.title}><h2>{s.title}</h2><p>{s.body}</p></section>)}</article></section></>}
+

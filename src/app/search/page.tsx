@@ -1,0 +1,7 @@
+"use client";
+import { useState } from "react";
+import { Search } from "lucide-react";
+import { products } from "@/data/products";
+import { ProductCard } from "@/components/product-card";
+export default function SearchPage(){const [q,setQ]=useState("");const results=q.trim()?products.filter(p=>[p.name,p.category,p.subcategory,...p.ingredients,...p.concerns].join(" ").toLowerCase().includes(q.toLowerCase())):[];return <section className="section"><div className="shell"><p className="eyebrow">Product finder</p><h1 className="mt-2 text-4xl font-bold text-navy">Search DermaQ Max</h1><div className="relative mt-8 max-w-2xl"><Search className="absolute left-4 top-1/2 -translate-y-1/2 text-blue"/><input autoFocus className="input h-14 pl-12 text-lg" value={q} onChange={e=>setQ(e.target.value)} placeholder="Search products, ingredients or concerns…"/></div>{q&&!results.length?<div className="empty mt-8"><h2 className="text-2xl font-bold text-navy">No search results</h2><p className="mt-2 text-muted">Try “niacinamide”, “dandruff” or “sun protection”.</p></div>:<div className="product-grid mt-10">{results.map(p=><ProductCard key={p.id} product={p}/>)}</div>}{!q&&<div className="mt-8"><p className="text-sm font-bold text-navy">Popular searches</p><div className="mt-3 flex flex-wrap gap-2">{["Sunscreen","Niacinamide","Dandruff","Dry skin","Lip care"].map(x=><button className="concern-chip" key={x} onClick={()=>setQ(x)}>{x}</button>)}</div></div>}</div></section>}
+

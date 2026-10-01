@@ -1,0 +1,1 @@
+import { AccountShell } from "@/components/account-shell";export default function Orders(){return <AccountShell title="Your orders"><div className="empty"><h2 className="text-2xl font-bold text-navy">No connected orders</h2><p className="mt-2 text-muted">Orders will appear after backend order creation is connected.</p></div></AccountShell>}

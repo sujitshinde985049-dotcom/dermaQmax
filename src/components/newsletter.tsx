@@ -1,0 +1,4 @@
+"use client";
+import { useState } from "react";
+export function Newsletter() { const [done, setDone] = useState(false); return <section className="newsletter"><div className="shell py-12 text-center"><p className="eyebrow text-aqua">WELCOME OFFER</p><h2 className="mt-2 text-3xl font-bold text-white">Get 10% off your first order</h2><p className="mt-2 text-white/65">Join for product updates, routines and early access to offers.</p>{done ? <p className="mt-6 font-semibold text-aqua">Thanks — you’re on the list.</p> : <form className="mx-auto mt-6 flex max-w-md gap-2" onSubmit={(e) => { e.preventDefault(); setDone(true); }}><input required type="email" aria-label="Email address" className="input bg-white" placeholder="Email address" /><button className="btn-primary whitespace-nowrap">Subscribe</button></form>}</div></section> }
+
